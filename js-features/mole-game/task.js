@@ -5,6 +5,12 @@ function getHole(index) {
   return document.getElementById(`hole${index}`);
 }; 
 
+function finishGame(text) {
+  alert(text);
+  deadMole.textContent = 0;
+  lostMole.textContent = 0;
+};
+
 for(let i = 1; i < 10; i++) {
   getHole(i).onclick = function() {   
  
@@ -12,9 +18,7 @@ for(let i = 1; i < 10; i++) {
       deadMole.textContent = Number(deadMole.textContent) + 1;
 
       if (+deadMole.textContent === 10) {
-        alert('Вы выиграли');
-        deadMole.textContent = 0;
-        lostMole.textContent = 0;
+        finishGame('Вы выиграли');
         return;
       } 
 
@@ -22,9 +26,7 @@ for(let i = 1; i < 10; i++) {
       lostMole.textContent = Number(lostMole.textContent) + 1;
 
       if (+lostMole.textContent === 5) {
-        alert('Вы проиграли');
-        lostMole.textContent = 0;
-        deadMole.textContent = 0;
+        finishGame('Вы проиграли');
         return;
       };    
     };   
