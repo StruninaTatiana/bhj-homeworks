@@ -1,9 +1,9 @@
 
-let outputTimer = document.getElementById('timer');
+const outputTimer = document.getElementById('timer');
 
-let countdown = function() {
+const countdown = function() {
   if (+outputTimer.textContent === 0) {
-    clearInterval(1);
+    clearInterval(idInterval);
     alert('Вы победили в конкурсе'); 
     return;
   };
@@ -11,4 +11,4 @@ let countdown = function() {
   outputTimer.textContent = Number(outputTimer.textContent) - 1;
 };
 
-setInterval(countdown, 1000);
+const idInterval = setInterval(countdown, 1000);
