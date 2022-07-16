@@ -10,7 +10,7 @@ for(let i = 0; i < menuItems.length - 1; i++) {
 
         if (menuItems[i + 1].closest('.menu_sub').className.includes('menu_active') ) {
           menuItems[i + 1].closest('.menu_sub').classList.remove('menu_active');
-          return;   
+          return false;   
         };
 
         document.querySelector('.menu_active').classList.remove('menu_active')
