@@ -5,7 +5,7 @@ const elementsClose = Array.from(document.getElementsByClassName('modal__close')
 for(let element of elementsClose) {
   element.onclick = function() {
     this.closest('.modal').classList.remove('modal_active');
-    document.getElementById('modal_main').classList.remove('modal_active');
+    //document.getElementById('modal_main').classList.remove('modal_active'); нужно убрать
   };
 };
 
