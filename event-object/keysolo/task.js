@@ -17,13 +17,17 @@ class Game {
   }
 
   registerEvents() {
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
+    document.addEventListener('keyup', (e) => {
+      
+      if (e.key !== 'Shift') {
+
+        if (this.currentSymbol.textContent.toLowerCase() === e.key.toLowerCase()) {
+          this.success();
+        } else {
+          this.fail(); 
+        };   
+      };  
+    }); 
   }
 
   success() {
@@ -56,17 +60,17 @@ class Game {
 
   getWord() {
     const words = [
-        'bob',
-        'awesome',
-        'netology',
-        'hello',
-        'kitty',
-        'rock',
-        'youtube',
-        'popcorn',
-        'cinema',
-        'love',
-        'javascript'
+        'Bob',
+        'Awesome',
+        'Netology',
+        'Hello',
+        'Kitty',
+        'Rock',
+        'Youtube',
+        'Popcorn',
+        'Cinema',
+        'Love',
+        'Javascript'
       ],
       index = Math.floor(Math.random() * words.length);
 
